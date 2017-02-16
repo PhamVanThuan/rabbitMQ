@@ -1,5 +1,0 @@
-D:\RabbitMQ Projects\HelloWorld\RabbitMQ\bin\Debug\RabbitMQ.dll
-D:\RabbitMQ Projects\HelloWorld\RabbitMQ\bin\Debug\RabbitMQ.pdb
-D:\RabbitMQ Projects\HelloWorld\RabbitMQ\obj\Debug\RabbitMQ.csprojResolveAssemblyReference.cache
-D:\RabbitMQ Projects\HelloWorld\RabbitMQ\obj\Debug\RabbitMQ.dll
-D:\RabbitMQ Projects\HelloWorld\RabbitMQ\obj\Debug\RabbitMQ.pdb
