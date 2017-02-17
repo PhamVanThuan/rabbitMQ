@@ -1,0 +1,12 @@
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\obj\Debug\PublishSubscribe.csprojResolveAssemblyReference.cache
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\PublishSubscribe.exe.config
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\PublishSubscribe.exe
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\PublishSubscribe.pdb
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\RabbitMQ.Entitites.dll
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\RabbitMQ.Client.dll
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\RabbitMQ.Entitites.pdb
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\RabbitMQ.Client.xml
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\obj\Debug\PublishSubscribe.exe
+D:\RabbitMQ Projects\HelloWorld\PublishSubscribe\obj\Debug\PublishSubscribe.pdb
