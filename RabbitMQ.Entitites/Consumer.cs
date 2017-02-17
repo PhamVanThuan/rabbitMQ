@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
 
 namespace RabbitMQ.Entitites
 {
     public class Consumer
     {
-        private readonly IModel Model;
+        private readonly IModel Channel;
         private readonly IConnection Connection;
         private readonly string QueueName;
 
@@ -23,8 +28,8 @@ namespace RabbitMQ.Entitites
             ConnectionFactory connectionFactory = new ConnectionFactory();
             connectionFactory.HostName = hostName;
             Connection = connectionFactory.CreateConnection();
-            Model = Connection.CreateModel();
-            Model.QueueDeclare(QueueName, true, false, false, null);
+            Channel = Connection.CreateModel();
+            Channel.QueueDeclare(QueueName, true, false, false, null);
         }
 
         //internal delegate to run the queue consumer on a seperate thread
@@ -39,26 +44,26 @@ namespace RabbitMQ.Entitites
 
         public void Consume()
         {
-            var consumer = new QueueingBasicConsumer(Model);
-            String consumerTag = Model.BasicConsume(QueueName, false, consumer);
-            while (isConsuming)
+            var consumer = new EventingBasicConsumer(Channel);
+            try
             {
-                try
+                consumer.Received += (model, ea) =>
                 {
-                    Client.Events.BasicDeliverEventArgs e = consumer.Queue.Dequeue();
-                    IBasicProperties props = e.BasicProperties;
-                    byte[] body = e.Body;
-                    // ... process the message
+                    var body = ea.Body;
                     OnMessageReceived(body);
-                    Model.BasicAck(e.DeliveryTag, false);
-                }
-                catch (OperationInterruptedException ex)
-                {
-                    // The consumer was removed, either through
-                    // channel or connection closure, or through the
-                    // action of IModel.BasicCancel().
-                    break;
-                }
+                    var message = Encoding.UTF8.GetString(body);
+                };
+                Channel.BasicConsume(
+                    queue: QueueName,
+                    autoAck: true,
+                    consumer: consumer);
+            }
+            catch (OperationInterruptedException ex)
+            {
+                // The consumer was removed, either through
+                // channel or connection closure, or through the
+                // action of IModel.BasicCancel().
+                //break;
             }
         }
 
@@ -67,8 +72,8 @@ namespace RabbitMQ.Entitites
             isConsuming = false;
             if (Connection != null)
                 Connection.Close();
-            if (Model != null)
-                Model.Abort();
+            if (Channel != null)
+                Channel.Abort();
         }
     }
 }

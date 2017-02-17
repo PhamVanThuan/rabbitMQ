@@ -15,4 +15,3 @@ D:\RabbitMQ Projects\HelloWorld\RabbitMQ.Entitites\bin\Debug\Microsoft.Diagnosti
 D:\RabbitMQ Projects\HelloWorld\RabbitMQ.Entitites\bin\Debug\RabbitMQ.Client.xml
 D:\RabbitMQ Projects\HelloWorld\RabbitMQ.Entitites\obj\Debug\RabbitMQ.Entitites.dll
 D:\RabbitMQ Projects\HelloWorld\RabbitMQ.Entitites\obj\Debug\RabbitMQ.Entitites.pdb
-D:\RabbitMQ Projects\HelloWorld\RabbitMQ.Entitites\obj\Debug\RabbitMQ.Entitites.csprojResolveAssemblyReference.cache

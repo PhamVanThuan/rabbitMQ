@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace WorkQueues
@@ -23,11 +26,6 @@ namespace WorkQueues
 
             Console.WriteLine("");
             Console.WriteLine("Job Complete!");
-            Console.ReadLine();
-        }
-    }
-}
-           Console.WriteLine("Job Complete!");
             Console.ReadLine();
         }
     }
