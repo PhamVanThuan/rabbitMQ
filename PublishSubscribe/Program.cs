@@ -22,10 +22,10 @@ namespace PublishSubscribe
                 () => { receivingDone = new QueueReader("5th", Config.MessageNo).ReadFromQueue(); }
                 );
 
-            while (sendingDone || receivingDone) { }
+            //while (sendingDone || receivingDone) { }
 
-            Console.WriteLine("");
-            Console.WriteLine("Job Complete!");
+            //Console.WriteLine("");
+            //Console.WriteLine("Job Complete!");
             Console.ReadLine();
         }
     }
